@@ -1,0 +1,30 @@
+
+//sass map and convert the px to em
+$breakpoints-up: (
+    'medium': 43.75em, //700 divide by 16 is the value in em 43.75
+    'large': 56.25em,   //900 divide by 16 is the value in em 56.25
+    'xlarge': 90em,   //1440 divide by 16 is the value in em 90
+);
+
+// 699.98px, 899.98px, 1439.98px
+$breakpoints-down: (
+  'small': 31.25em,
+  'medium': 56.24875em,
+  'large': 89.99875em,
+);
+
+//sass mixins
+//700 and less - mobile, 900 and more - desktop, 1440 and larger for screen larger
+@mixin breakpoint-up($size) {
+    //use the map here above and add two parameter
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  } 
+}
+
+ //new mixin
+ @mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
+}
