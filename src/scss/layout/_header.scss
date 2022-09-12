@@ -1,0 +1,56 @@
+@use '../util' as u;
+
+
+.header{
+
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include u.breakpoint-down(small) {
+       line-height: u.rem(1);
+       flex-direction: column;
+    }
+  }
+
+  &__logo{
+    font-family: u.$font;
+    font-weight: 700;
+    font-style: bold;
+  }
+
+  &__social{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: u.rem(5);
+    cursor: pointer;
+
+    @include u.breakpoint-down(medium) {
+      width: clamp(u.rem(300), 30%, u.rem(500));
+      gap: u.rem(20);    
+     }
+
+           .fa-brands{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              width: u.rem(30);
+              height: u.rem(30);
+              background-color: var(--primary-background-color);
+              color: var(--primary-text-color);
+              padding: u.rem(10);
+
+            &:hover{
+                background-color: var(--secondary-background-color);;
+                transition: 1.5s;
+            }
+        }
+    
+    }
+    
+ 
+}   
