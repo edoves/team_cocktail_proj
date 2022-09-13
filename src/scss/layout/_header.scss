@@ -166,7 +166,7 @@
     top: u.rem(23);
     width: u.rem(27);
   }
-  
+
   #burger-menu span:before {
     left: u.rem(0);
     top: u.rem(-10);
@@ -198,6 +198,41 @@
     opacity:0;
    
     }
+  }
+}
+
+.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--teriary-background-color) ;
+
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    @include u.breakpoint-down(small){
+      font-size: u.rem(13);
+    }
+  }
+
+  &__logo{
+
+    a{
+      color: var( --primary-text-color);
+      font-size: u.rem(20);
+      font-family: u.$font;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &__rights{
+    font-family: u.$font;
+    color: var( --primary-text-color);
   }
 }
   
