@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src="dist/js/script.js" defer></script>
     <title>Cocktail</title>
   </head>
   <body>
+    <!--################## Header Start ##################-->
     <header class="header">
       <div class="container">
         <div class="header__container">
           <div class="header__logo">
-            <h2>COCKTAIL</h2>
+           <a href=""><h2>COCKTAIL</h2></a> 
           </div>
           <ul class="header__social">
             <li class="header__item">
@@ -44,6 +46,28 @@
           </ul>
         </div>
       </div>
+      <div id="burger-menu">
+        <span></span>
+      </div>
+      <nav class="header__nav">
+        <div class="container header__menu" id="menu">
+          <ul class="header__navItem">
+              <li class="header__navLink">
+                <a href="">Home</a>
+              </li>
+              <li class="header__navLink">
+                <a href="">Ingredient</a>
+              </li>
+              <li class="header__navLink">
+                <a href="">Cocktail Name</a>
+              </li>
+              <li class="header__navLink">
+                <a href="">Alcohol/Non-Alcohol</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
     </header>
+    <!--################## Header End ##################-->
   </body>
 </html>
