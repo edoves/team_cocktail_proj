@@ -1,0 +1,69 @@
+@use '../util' as u;
+
+.main{
+    margin: 0;
+}
+
+.hero{
+    background-image: url("/src/images/hero.jpg");
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+    box-shadow:inset 0 0 0 u.rem(2000) rgba(30, 22, 95, 0.2);
+    width: 100%;
+    height: u.rem(420);
+    transform: scaleX(-1);
+
+    
+
+
+    &__text{
+        transform: scaleX(-1);
+        font-family: u.$font;
+        font-weight: 700;
+        color: var(--primary-text-color);
+        display: flex;
+        align-items: center;
+        padding-top:  u.rem(80);
+        line-height: u.rem(80);
+        text-transform: uppercase;
+
+        @include u.breakpoint-down(large){
+            font-size: u.rem(41);
+        }
+
+        @include u.breakpoint-down(medium){
+            font-size: u.rem(35);
+            line-height: u.rem(60);
+            text-align: center;
+            justify-content: center;
+        }
+
+        @include u.breakpoint-down(small){
+            font-size: u.rem(30);
+            padding-top: u.rem(100);
+            line-height: u.rem(44);
+        }
+
+        @include u.breakpoint-down(xsmall){
+            font-size: u.rem(25);
+            line-height: u.rem(43);
+            padding-top: u.rem(120);
+            text-align: center;
+            
+        }
+    }
+
+
+    &__span1{
+        display: block;
+
+    }
+
+    &__span2{
+        color: var(--teriary-background-color);
+
+      
+    }
+   
+}
