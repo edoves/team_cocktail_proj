@@ -1,0 +1,38 @@
+@use '../util' as u;
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--teriary-background-color);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(13);
+    }
+
+    @include u.breakpoint-down(xsmall) {
+      gap: u.rem(30);
+      font-size: u.rem(9);
+    }
+  }
+
+  &__logo {
+    a {
+      color: var(--primary-text-color);
+      font-size: u.rem(20);
+      font-family: u.$font;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &__rights {
+    font-family: u.$font;
+    color: var(--primary-text-color);
+  }
+}

@@ -4,6 +4,8 @@
   &__container {
     display: flex;
     justify-content: center;
+    padding: 28px 0 14px;
+    position: relative;
   }
 
   &__links {
@@ -12,8 +14,6 @@
     align-items: center;
     width: 789px;
     height: 21px;
-    left: 567px;
-    top: 819px;
     padding: 0px;
   }
   &__item {
@@ -29,11 +29,11 @@
       color: #383838;
       &:active {
         color: var(--teriary-background-color);
+        font-weight: 700;
       }
       &:hover {
         color: var(--teriary-background-color);
         transition: 0.5s;
-        font-weight: 700;
       }
     }
   }
