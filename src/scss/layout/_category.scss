@@ -1,0 +1,40 @@
+@use '../util' as u;
+
+.category {
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 28px 0 14px;
+    position: relative;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 789px;
+    height: 21px;
+    padding: 0px;
+  }
+  &__item {
+    align-items: flex-start;
+    gap: 40px;
+    a {
+      font-family: u.$font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: uppercase;
+      color: #383838;
+      &:active {
+        color: var(--teriary-background-color);
+        font-weight: 700;
+      }
+      &:hover {
+        color: var(--teriary-background-color);
+        transition: 0.5s;
+      }
+    }
+  }
+}
