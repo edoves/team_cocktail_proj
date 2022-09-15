@@ -1,0 +1,15 @@
+@use '../util' as u;
+
+.main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: #efefef;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
