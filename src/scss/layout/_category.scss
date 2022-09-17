@@ -4,22 +4,23 @@
   &__container {
     display: flex;
     justify-content: center;
-    padding: 28px 0 14px;
-    position: relative;
+    padding: 44px 0 30px;
   }
 
   &__links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    grid-template-columns: auto auto auto;
     width: 789px;
-    height: 21px;
+    height: auto;
     padding: 0px;
-  }
-  &__item {
-    align-items: flex-start;
-    gap: 40px;
-    a {
+    grid-gap: 15px;
+    grid-template-columns: repeat(8, 1fr);
+    button {
+      border: none;
+      width: 100%;
+      white-space: nowrap;
       font-family: u.$font;
       font-style: normal;
       font-weight: 400;
@@ -35,6 +36,17 @@
         color: var(--teriary-background-color);
         transition: 0.5s;
       }
+    }
+
+    @include u.breakpoint-down(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include u.breakpoint-down(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include u.breakpoint-down(xsmall) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
