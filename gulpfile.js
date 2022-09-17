@@ -6,6 +6,7 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
+const concat = require("gulp-concat");
 const browsersync = require("browser-sync").create();
 
 // Use dart-sass for @use
@@ -21,7 +22,8 @@ function scssTask() {
 
 // JavaScript Task
 function jsTask() {
-  return src("src/js/script.js", { sourcemaps: true })
+  return src("src/js/*.js", { sourcemaps: true })
+    .pipe(concat("script.js"))
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(terser())
     .pipe(dest("dist/js", { sourcemaps: "." }));

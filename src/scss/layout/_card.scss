@@ -3,13 +3,46 @@
 .card {
   &__container {
     display: grid;
+    max-width: 1400px;
     grid-template-columns: auto auto auto;
     gap: 26px;
+    @include u.breakpoint-down(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include u.breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include u.breakpoint-down(small) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48.5px 0 26px;
+    button {
+      border: 2px solid #5d8a2b;
+      border-radius: 50px;
+      padding: 10px 27px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: #383838;
+    }
   }
   &__item {
     display: flex;
     flex-direction: column;
     background-color: var(--primary-text-color);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
     img {
       width: 100%;
     }
