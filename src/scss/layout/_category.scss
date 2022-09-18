@@ -1,4 +1,4 @@
-@use '../util' as u;
+@use "../util" as u;
 
 .category {
   &__container {
@@ -21,7 +21,6 @@
       border: none;
       width: 100%;
       white-space: nowrap;
-      font-family: u.$font;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
