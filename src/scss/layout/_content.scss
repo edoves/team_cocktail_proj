@@ -1,0 +1,54 @@
+@use "../util" as u;
+.page {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+
+  &__item {
+    flex-basis: calc(100% / 2 - 1.5rem);
+    img {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 60em) {
+      flex: 1 1 24rem;
+    }
+  }
+
+  &__content {
+    text-transform: capitalize;
+    h1 {
+      color: var(--dark-txt);
+
+      @media only screen and (min-width: 60em) {
+        margin-top: 0;
+      }
+    }
+
+    > :nth-child(2) {
+      font-weight: 600;
+    }
+    :nth-child(3) {
+      text-transform: none;
+    }
+  }
+
+  &__ingredient {
+    background-color: #fff;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    .coat {
+      background: #5d8a2b;
+      color: white;
+      padding: 0.1rem 0.7rem;
+    }
+
+    li {
+      margin-left: 0.7rem;
+      padding: 0.5rem 0;
+    }
+  }
+}
