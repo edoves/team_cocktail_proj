@@ -1,0 +1,55 @@
+@use "util" as u;
+
+.thumbnail{
+    padding: u.rem(80) 0;
+
+    &__title{
+       color: var(--secondary-text-color);
+       font-size: u.rem(24); 
+       font-weight: 600;
+       line-height: u.rem(36);
+       padding-bottom: u.rem(10);
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: u.rem(20);
+
+        .box{
+        display: flex;  
+        justify-content: center; 
+        align-items: center; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: u.rem(250);
+        height: u.rem(150);
+       }
+    }
+
+    &__items1{
+       background-image: url(/src/images/ordinaryDrink.jpg);
+    }
+
+    &__items2{
+        background-image: url(/src/images/cocktailGlass.jpg);
+     }
+
+    &__items3{
+        background-image: url(/src/images/homemadeLiqour.jpg);
+     }
+
+    &__items4{
+        background-image: url(/src/images/collinGlass.jpg);
+     }
+
+  
+    &__text{
+        font-size: u.rem(20);
+        font-weight: 700;
+        text-align: center;
+        color: var(--primary-text-color);
+    }
+}
