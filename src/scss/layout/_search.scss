@@ -1,0 +1,49 @@
+@use "util" as u;
+
+.main{
+    margin: 0 auto;
+    padding: u.rem(90);
+    height: 75vh;
+
+    &__search{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__input{
+        font-size: u.rem(12);
+        line-height: u.rem(18);
+        font-weight: 400;
+        width: u.rem(400);
+        height: u.rem(40);
+        padding-right: u.rem(50);
+        padding-left: u.rem(10);
+
+        @include u.breakpoint-down(small){
+            width: u.rem(300);
+        }
+
+    }
+
+    &__btn{
+        cursor: pointer;
+        font-size: u.rem(12);
+        line-height: u.rem(18);
+        margin-left: u.rem(-95);
+        height: u.rem(30);
+        width: u.rem(90);
+        color: white;
+        border-radius: 7%;
+        border: 0;
+        background-color: var(--secondary-background-color);
+
+        @include u.breakpoint-down(xsmall){
+            margin-left: u.rem(-57);
+            
+        }
+    }
+}
