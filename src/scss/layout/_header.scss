@@ -7,6 +7,7 @@
     align-items: center;
 
     @include u.breakpoint-down(small) {
+      margin: u.rem(20) 0;
       line-height: u.rem(1);
       flex-direction: column;
     }
@@ -52,7 +53,7 @@
   }
 
   &__nav {
-    padding: u.rem(16);
+    padding: u.rem(20) 0;
     background-color: var(--teriary-background-color);
 
     @include u.breakpoint-down(small) {
@@ -64,7 +65,6 @@
     @include u.breakpoint-down(small) {
       z-index: 1;
       min-width: 100%;
-      position: fixed;
       top: u.rem(130);
       left: 0;
       visibility: hidden;
@@ -78,6 +78,11 @@
         padding-left: u.rem(10);
         padding-right: u.rem(10);
         background: var(--teriary-background-color);
+        height: u.rem(200);
+
+        @include u.breakpoint-down(xsmall){
+          height: u.rem(210);
+        }
       }
 
       a {
@@ -93,20 +98,23 @@
     list-style: none;
     padding: 0;
     gap: u.rem(20);
+    
 
     @include u.breakpoint-down(small) {
       flex-direction: column;
       padding: 0;
+      height: u.rem(1);
     }
   }
 
   &__navLink {
+    bottom: -10;
     font-weight: 600;
     font-size: u.rem(16);
 
     a {
       color: var(--primary-text-color);
-
+      
       &:hover {
         color: var(--tertiary-text-color);
       }
@@ -122,6 +130,7 @@
         padding-bottom: u.rem(17)
       }
     }
+
   }
 
   //burger menu
