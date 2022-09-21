@@ -64,7 +64,6 @@
     @include u.breakpoint-down(small) {
       z-index: 1;
       min-width: 100%;
-      min-height: 40%;
       position: fixed;
       top: u.rem(130);
       left: 0;
@@ -120,6 +119,7 @@
 
       &:last-child {
         border-bottom: none;
+        
       }
     }
   }
