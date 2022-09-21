@@ -25,15 +25,15 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: u.rem(5);
+    gap: u.rem(10);
     cursor: pointer;
 
     @include u.breakpoint-down(medium) {
-      width: clamp(u.rem(300), 30%, u.rem(500));
-      gap: u.rem(20);
+      gap: u.rem(10);
+      margin: 0 auto;
     }
 
-    .fa-brands {
+     .fa-brands {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -52,7 +52,7 @@
   }
 
   &__nav {
-    padding: u.rem(1);
+    padding: u.rem(16);
     background-color: var(--teriary-background-color);
 
     @include u.breakpoint-down(small) {
@@ -119,7 +119,7 @@
 
       &:last-child {
         border-bottom: none;
-        
+        padding-bottom: u.rem(17)
       }
     }
   }
