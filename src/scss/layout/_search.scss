@@ -1,11 +1,11 @@
 @use "util" as u;
 
-.main{
+.search{
     margin: 0 auto;
     padding: u.rem(90);
     height: 75vh;
 
-    &__search{
+     &__form{
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -30,6 +30,7 @@
     }
 
     &__btn{
+        outline: none;
         cursor: pointer;
         font-size: u.rem(12);
         line-height: u.rem(18);
@@ -38,7 +39,7 @@
         width: u.rem(90);
         color: white;
         border-radius: 7%;
-        border: 0;
+        border: none;
         background-color: var(--secondary-background-color);
 
         @include u.breakpoint-down(xsmall){
