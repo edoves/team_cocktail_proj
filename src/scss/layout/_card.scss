@@ -6,6 +6,7 @@
     max-width: 1400px;
     grid-template-columns: auto auto auto;
     gap: 26px;
+    
     @include u.breakpoint-down(large) {
       grid-template-columns: repeat(3, 1fr);
     }
