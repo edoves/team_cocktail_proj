@@ -10,20 +10,19 @@
         @include u.breakpoint-down(medium) {
             flex-direction: column;
              gap: 0;
-         }
-
-        
+        } 
     }
 
     &__item{
        background-color: #ffffff; 
-       margin-bottom: u.rem(40);
+       margin-bottom: u.rem(80);
           
        img{
         width: 100%;
        }
 
        h2{
+        padding-left: u.rem(14);
         color: #383838;
         font-weight: 600;
         font-size: u.rem(24);
@@ -31,6 +30,7 @@
        }
 
        h3{
+        padding-left: u.rem(14);
         font-size: u.rem(14);
         line-height: u.rem(18);
         font-weight: 400;
@@ -43,14 +43,13 @@
        flex-wrap: wrap;
 
        p{
+        padding-left: u.rem(14);
         width: u.rem(440);
         font-size: u.rem(14);
         line-height: u.rem(18);
         font-weight: 400;
-  
-        
-       
       }
+
     }
 
     &__buttonContainer{
@@ -70,23 +69,25 @@
         }
     }
 
-    &__ingredients{
-       line-height: u.rem(1); 
-       
-
-        ul{  
+     &__ingContainer{
         display: flex;
         gap: u.rem(50);
-        padding-bottom: u.rem(40);
-       
-    
-            li{
-            font-size: u.rem(14);
-            line-height: u.rem(18);
-            font-weight: 400;
-            text-align: left;
-
-            }      
-        }
+        height: u.rem(70);
     }
+
+    &__ingredients{
+        line-height: u.rem(1);
+        
+         ul{  
+        
+             li{
+             padding-left: u.rem(14);
+             font-size: u.rem(14);
+             line-height: u.rem(18);
+             font-weight: 400;
+             text-align: left;
+             padding-bottom: u.rem(25);
+             }      
+         }
+     }
 }
