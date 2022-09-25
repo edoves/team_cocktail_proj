@@ -114,14 +114,14 @@
         <div class="container">
           <div class="category__container">
             <div class="category__links">
-              <button class="btn">All</button>
-              <button class="btn">Ordinary drink</button>
-              <button class="btn">Cocktail</button>
-              <button class="btn">Shake</button>
-              <button class="btn">Cocoa</button>
-              <button class="btn">Shot</button>
-              <button class="btn">Homemade liqueur</button>
-              <button class="btn">Beer</button>
+              <button class="btn active" data-action="All" disabled>All</button>
+              <button class="btn" data-action="Ordinary Drink">Ordinary drink</button>
+              <button class="btn" data-action="Cocktail">Cocktail</button>
+              <button class="btn" data-action="Shake">Shake</button>
+              <button class="btn" data-action="Cocoa">Cocoa</button>
+              <button class="btn" data-action="Shot">Shot</button>
+              <button class="btn" data-action="Homemade Liqueur">Homemade liqueur</button>
+              <button class="btn" data-action="Beer">Beer</button>
           </div>
         </div>
       </section>
@@ -129,7 +129,19 @@
       <!--################## Card section End ##################-->
       <section class="card">
           <div class="container">
-            <div class="card__container">
+            <div class="card__container" id="OrdinaryDrink">
+            </div>
+            <div class="card__container" id="Cocktail">
+            </div>
+            <div class="card__container" id="Shake">
+            </div>
+            <div class="card__container" id="Cocoa">
+            </div>
+            <div class="card__container" id="Shot">
+            </div>
+            <div class="card__container" id="HomemadeLiqueur">
+            </div>
+            <div class="card__container" id="Beer">
             </div>
             <div class="card__buttonContainer">
               <button>Load more content</button>

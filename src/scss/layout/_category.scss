@@ -1,4 +1,4 @@
-@use "../util" as u;
+@use '../util' as u;
 
 .category {
   &__container {
@@ -27,7 +27,7 @@
       line-height: 21px;
       text-transform: uppercase;
       color: #383838;
-      &:active {
+      &.active {
         color: var(--teriary-background-color);
         font-weight: 700;
       }
