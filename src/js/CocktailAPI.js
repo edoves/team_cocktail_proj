@@ -1,9 +1,9 @@
-console.log(1, "First Load");
+console.log(1, 'First Load');
 
 class CockTailAPI {
   async getCategories(cat) {
     const response = await fetch(
-      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + cat
+      'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + cat
     );
     var data = await response.json();
     return data;
@@ -14,10 +14,10 @@ class CockTailAPI {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${q}`
       );
-      var data = await response.json();
+      const data = await response.json();
       return data;
     } catch (err) {
-      throw new Error("The data faild to load", { cause: err });
+      throw new Error('The data faild to load', { cause: err });
     }
   }
 }
