@@ -20,18 +20,16 @@ document
 //sticky menu when scroll
 window.addEventListener("scroll", function() {
   
-  const scrolled = window.scrollY;
-  
   const menuSticky = document.querySelector(".category__container");
-  
+  const scrolled = window.scrollY;
+
     if(scrolled >= 550 ) {
       menuSticky.classList.toggle("sticky", window.scrollY)
-    } 
-
-    else {
+    } else {
       menuSticky.classList.remove('sticky', window.scrollY) 
     }
   }
+
 )
 
 //Get Categories
