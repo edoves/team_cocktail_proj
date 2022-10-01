@@ -137,9 +137,17 @@
   @include u.breakpoint-down(small) {
     #burger-menu {
       cursor: pointer;
-      position: relative;
+      position: absolute;
       z-index: 2;
-      margin-top: u.rem(3);
+      right: 0;
+      padding: u.rem(24);
+      top: u.rem(112);
+      //top: u.rem(14);
+      // height: u.rem(10);
+      // top: u.rem(30);
+      //bottom: 0;
+      //width: u.rem(3);
+      
     }
 
     #burger-menu span,
