@@ -16,8 +16,8 @@ document
   .getElementById("copyright")
   .appendChild(document.createTextNode(new Date().getFullYear()));
 
-
 //sticky menu when scroll
+
 window.addEventListener("scroll", function() {
   
   const menuSticky = document.querySelector(".category__container");
@@ -32,9 +32,11 @@ window.addEventListener("scroll", function() {
 
 )
 
+
 //Get Categories
 const categoryLinks = document.querySelector(".category__links");
-const cardContainer = document.querySelectorAll(".card__container")
+const cardContainer = document.querySelectorAll(".card__container");
+const search = document.querySelector(".search__form");
 // cardContainer.firstChild;
 /**
  *  * EventListners fires once page laoded
@@ -42,6 +44,10 @@ const cardContainer = document.querySelectorAll(".card__container")
 eventListners();
 function eventListners() {
   document.addEventListener("DOMContentLoaded", pageReady);
+  // targeting the searhc input in cocktail page
+  if (search) {
+    search.addEventListener("submit", searchCocktail);
+  }
 }
 
 function pageReady() {
@@ -61,22 +67,22 @@ function pageReady() {
           catStrings[i].charAt(0).toUpperCase() + catStrings[i].substring(1);
       }
       newString = catStrings.join(" ");
-      newCat = newString.replace(/\s/g, '');
+      newCat = newString.replace(/\s/g, "");
 
       for (const buttons of btnArray) {
-        buttons.classList.remove('active');
-        buttons.removeAttribute('disabled');
+        buttons.classList.remove("active");
+        buttons.removeAttribute("disabled");
       }
-      
-      this.classList.add('active');
-      this.setAttribute('disabled', '');
+
+      this.classList.add("active");
+      this.setAttribute("disabled", "");
 
       for (const card of cardContainer) {
-        if (newCat !== card.getAttribute('id')) {
-          card.classList.add('hide');
-          card.innerHTML = ""
+        if (newCat !== card.getAttribute("id")) {
+          card.classList.add("hide");
+          card.innerHTML = "";
         } else {
-          card.classList.remove('hide');
+          card.classList.remove("hide");
         }
       }
       containerId = document.querySelector("#" + newCat);
@@ -84,4 +90,11 @@ function pageReady() {
       // console.log("first");
     });
   });
+}
+
+function searchCocktail(e) {
+  e.preventDefault();
+  const searchInput = document.querySelector(".search__input").value;
+
+  ui.displaySearch(searchInput);
 }

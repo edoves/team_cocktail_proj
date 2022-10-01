@@ -1,93 +1,46 @@
-@use "util" as u;
+.cards {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-.cards{
-
-    &__container{
-        display: flex;
-        justify-content: center;
-        gap: u.rem(150);
-       
-        @include u.breakpoint-down(medium) {
-            flex-direction: column;
-             gap: 0;
-        } 
+  &__thumbnail {
+    margin: 0;
+    > img {
+      width: 100%;
     }
+  }
 
-    &__item{
-       background-color: #ffffff; 
-       margin-bottom: u.rem(80);
-          
-       img{
-        width: 100%;
-       }
-
-       h2{
-        padding-left: u.rem(14);
-        color: #383838;
-        font-weight: 600;
-        font-size: u.rem(24);
-        line-height: u.rem(30);
-       }
-
-       h3{
-        padding-left: u.rem(14);
-        font-size: u.rem(14);
-        line-height: u.rem(18);
-        font-weight: 400;
-       }
-
+  &__item {
+    background: white;
+    margin-bottom: 4rem;
+    @media only screen and (min-width: 60rem) {
+      flex: 0 1 calc(50% - 5em);
     }
+  }
 
-    &__para{
-       display: flex;
-       flex-wrap: wrap;
+  &__desc {
+    padding: 0 1.5rem;
+    // height: 17rem;
+  }
 
-       p{
-        padding-left: u.rem(14);
-        width: u.rem(440);
-        font-size: u.rem(14);
-        line-height: u.rem(18);
-        font-weight: 400;
+  &__ingredients {
+    padding: 1.5rem 1.5rem;
+    ul {
+      @media only screen and (min-width: 60rem) {
+        columns: 2;
       }
-
     }
+  }
 
-    &__buttonContainer{
-        width: 100%;
-        padding: u.rem(20) 0 u.rem(26);
-
-        button{
-            width: 100%;
-            padding: u.rem(10);
-            background-color: var(--teriary-background-color);
-            color: var(--primary-text-color);
-            border: none;
-            font-weight: 400;
-            font-size: u.rem(14);
-            line-height: u.rem(18);
-            cursor: pointer;
-        }
+  &__title {
+    background: #5d8a2b;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    > p {
+      margin: 0;
     }
-
-     &__ingContainer{
-        display: flex;
-        gap: u.rem(50);
-        height: u.rem(70);
-    }
-
-    &__ingredients{
-        line-height: u.rem(1);
-        
-         ul{  
-        
-             li{
-             padding-left: u.rem(14);
-             font-size: u.rem(14);
-             line-height: u.rem(18);
-             font-weight: 400;
-             text-align: left;
-             padding-bottom: u.rem(25);
-             }      
-         }
-     }
+  }
 }
