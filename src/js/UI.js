@@ -83,15 +83,15 @@ class UI {
   }
 
   loader(cardContainerElement) {
-    const loaderContainer = cardContainerElement.parentElement;
-    const loaderImg = document.createElement('img');
-    loaderImg.classList = 'loader';
-    loaderImg.src = '../src/images/loader.gif';
-    loaderContainer.insertBefore(loaderImg, loaderContainer.firstChild);
-    cardContainerElement.innerHTML = '';
-    setTimeout(() => {
-      loaderImg.remove();
-    }, 2000);
+    // const loaderContainer = cardContainerElement.parentElement;
+    // const loaderImg = document.createElement('img');
+    // loaderImg.classList = 'loader';
+    // loaderImg.src = '../src/images/loader.gif';
+    // loaderContainer.insertBefore(loaderImg, loaderContainer.firstChild);
+    // cardContainerElement.innerHTML = '';
+    // setTimeout(() => {
+    //   loaderImg.remove();
+    // }, 2000);
   }
 
   displayMessage(msg, className, el) {
