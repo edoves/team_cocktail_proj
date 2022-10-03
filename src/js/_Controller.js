@@ -27,11 +27,8 @@ window.addEventListener('scroll', function () {
     menuSticky.classList.toggle('sticky', window.scrollY);
   } else {
     menuSticky.classList.remove('sticky', window.scrollY);
-
   }
-
-)
-
+});
 
 //Get Categories
 const categoryLinks = document.querySelector('.category__links');
@@ -95,13 +92,12 @@ function pageReady() {
 
 function searchCocktails(e) {
   e.preventDefault();
-
   const searchInput = document.querySelector('.search__input');
   const sQuery = searchInput.value;
   if (!sQuery) {
     ui.displayMessage(`The input field is empty`, 'alert', searchInput);
   } else {
-    cockTailAPI.getCocktailByName(searchInput).then((data) => {
+    cockTailAPI.getCocktailByName(sQuery).then((data) => {
       if (data.drinks === null) {
         ui.displayMessage(
           `The item "${sQuery}" is not available`,
@@ -109,7 +105,11 @@ function searchCocktails(e) {
           searchInput
         );
       } else {
-        ui.displayMessage(`Magnificent`, 'success', searchInput);
+        ui.displayMessage(
+          `Here are your search result for ${sQuery.toUpperCase()}`,
+          'success',
+          searchInput
+        );
         console.log(data);
       }
     });
