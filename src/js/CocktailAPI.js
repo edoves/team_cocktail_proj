@@ -9,7 +9,7 @@ class CockTailAPI {
     return data;
   }
 
-  async getSearchQuery(q) {
+  async getCocktailByName(q) {
     try {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${q}`
@@ -17,7 +17,7 @@ class CockTailAPI {
       const data = await response.json();
       return data;
     } catch (err) {
-      throw new Error('The data faild to load', { cause: err });
+      throw new Error('The data failed to load');
     }
   }
 }
