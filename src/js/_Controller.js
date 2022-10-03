@@ -17,6 +17,7 @@ document
   .appendChild(document.createTextNode(new Date().getFullYear()));
 
 //sticky menu when scroll
+
 window.addEventListener('scroll', function () {
   const scrolled = window.scrollY;
 
@@ -26,8 +27,11 @@ window.addEventListener('scroll', function () {
     menuSticky.classList.toggle('sticky', window.scrollY);
   } else {
     menuSticky.classList.remove('sticky', window.scrollY);
+
   }
-});
+
+)
+
 
 //Get Categories
 const categoryLinks = document.querySelector('.category__links');
