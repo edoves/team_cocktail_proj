@@ -3,7 +3,7 @@ console.log(3, 'Third Load');
 class UI {
   displayCategory(cat, containerId) {
     cockTailAPI.getCategories(cat).then(({ drinks }) => {
-      this.loader(cardContainer);
+      // this.loader(cardContainer);
       drinks.map(function (item, index) {
         //Append to the card__container class
         containerId.innerHTML += `<div class="card__item" key=${index}>
@@ -18,40 +18,36 @@ class UI {
     });
   }
 
-  displaySearch(q) {
-    cockTailAPI.getSearchQuery(q).then(({ drinks }) => {
-      const cardsContainer = document.querySelector('.cards__container');
-      this.loader(cardsContainer);
-      drinks.map((drink) => {
-        setTimeout(() => {
-          cardsContainer.innerHTML += `
-        <article class="cards__item">
-        <figure class="cards__thumbnail">
-          <img src=${drink.strDrinkThumb} />
-        </figure>
-        <div class="cards__content">
-          <div class="cards__desc">
-            <h2>${drink.strDrink}</h2>
-            <h3>Instructions:</h3>
-            <p>
-              ${drink.strInstructions}
-            </p>
-          </div>
-          <div class="cards__title">
-            <p>Ingredients</p>
-          </div>
-          <div class="cards__ingredients">
-          
-            <ul>
-            ${this.#dispayIngList(drink)}
-            </ul>
-          </div>
-        </div>
-      </article>
-        `;
-        }, 2000);
-        // console.log(drink);
-      });
+  displaySearch({ drinks }) {
+    const cardsContainer = document.querySelector('.cards__container');
+    this.loader(cardsContainer);
+    drinks.map((drink) => {
+      setTimeout(() => {
+        cardsContainer.innerHTML += `
+            <article class="cards__item">
+                <figure class="cards__thumbnail">
+                  <img src=${drink.strDrinkThumb} />
+                </figure>
+              <div class="cards__content">
+                  <div class="cards__desc">
+                    <h2>${drink.strDrink}</h2>
+                    <h3>Instructions:</h3>
+                    <p>
+                      ${drink.strInstructions}
+                    </p>
+                  </div>
+                  <div class="cards__title">
+                    <p>Ingredients</p>
+                  </div>
+                  <div class="cards__ingredients">        
+                  <ul>
+                  ${this.#dispayIngList(drink)}
+                  </ul>
+                 </div>
+              </div>
+            </article>
+            `;
+      }, 2000);
     });
   }
 
@@ -83,15 +79,15 @@ class UI {
   }
 
   loader(cardContainerElement) {
-    // const loaderContainer = cardContainerElement.parentElement;
-    // const loaderImg = document.createElement('img');
-    // loaderImg.classList = 'loader';
-    // loaderImg.src = '../src/images/loader.gif';
-    // loaderContainer.insertBefore(loaderImg, loaderContainer.firstChild);
-    // cardContainerElement.innerHTML = '';
-    // setTimeout(() => {
-    //   loaderImg.remove();
-    // }, 2000);
+    const loaderContainer = cardContainerElement.parentElement;
+    const loaderImg = document.createElement('img');
+    loaderImg.classList = 'loader';
+    loaderImg.src = '../src/images/loader.gif';
+    loaderContainer.insertBefore(loaderImg, loaderContainer.firstChild);
+    cardContainerElement.innerHTML = '';
+    setTimeout(() => {
+      loaderImg.remove();
+    }, 2000);
   }
 
   displayMessage(msg, className, el) {

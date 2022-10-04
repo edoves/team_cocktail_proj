@@ -31,8 +31,8 @@ window.addEventListener('scroll', function () {
 });
 
 //Get Categories
-const categoryLinks = document.querySelector('.category__links');
 const cardContainer = document.querySelectorAll('.card__container');
+const categoryLinks = document.querySelector('.category__links');
 
 // cardContainer.firstChild;
 /**
@@ -106,11 +106,12 @@ function searchCocktails(e) {
         );
       } else {
         ui.displayMessage(
-          `Here are your search result for ${sQuery.toUpperCase()}`,
+          `Here are the info about ${sQuery.toUpperCase()}`,
           'success',
           searchInput
         );
-        console.log(data);
+        ui.displaySearch(data);
+        this.reset();
       }
     });
   }
