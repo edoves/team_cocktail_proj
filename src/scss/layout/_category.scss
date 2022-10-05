@@ -1,13 +1,24 @@
 @use '../util' as u;
 
 .category {
+
   &__container {
     display: flex;
     justify-content: center;
     padding: 44px 0 30px;
   }
 
-  &__links {
+  .sticky{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color:#fff;
+    padding: u.rem(20);
+  }
+
+   &__links {
     display: grid;
     margin: 0 auto;
     text-align: center;
@@ -27,6 +38,7 @@
       line-height: 21px;
       text-transform: uppercase;
       color: #383838;
+      background-color: transparent;
       &.active {
         color: var(--teriary-background-color);
         font-weight: 700;
@@ -36,6 +48,8 @@
         transition: 0.5s;
       }
     }
+
+
 
     @include u.breakpoint-down(medium) {
       grid-template-columns: repeat(4, 1fr);
