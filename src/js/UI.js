@@ -21,9 +21,11 @@ class UI {
   displaySearch({ drinks }) {
     const cardsContainer = document.querySelector('.cards__container');
     this.loader(cardsContainer);
-    drinks.map((drink) => {
-      setTimeout(() => {
-        cardsContainer.innerHTML += `
+    drinks
+      .sort(() => 0.5 - Math.random())
+      .map((drink) => {
+        setTimeout(() => {
+          cardsContainer.innerHTML += `
             <article class="cards__item">
                 <figure class="cards__thumbnail">
                   <img src=${drink.strDrinkThumb} />
@@ -47,8 +49,8 @@ class UI {
               </div>
             </article>
             `;
-      }, 2000);
-    });
+        }, 2000);
+      });
   }
 
   #dispayIngList(ingObj) {
