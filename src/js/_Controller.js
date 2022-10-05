@@ -18,7 +18,11 @@ document
 
 //Get Categories
 const categoryLinks = document.querySelector(".category__links");
-const cardContainer = document.querySelectorAll(".card__container")
+const cardContainer = document.querySelectorAll(".card__container");
+
+
+
+
 // cardContainer.firstChild;
 /**
  *  * EventListners fires once page laoded
@@ -26,14 +30,19 @@ const cardContainer = document.querySelectorAll(".card__container")
 eventListners();
 function eventListners() {
   document.addEventListener("DOMContentLoaded", pageReady);
+  
 }
-
+  // const btnArray = Array.from(btn);
+  
+  
+  //load More Button
+  let loadMoreBtn = document.querySelector(".loadMoreBtn");
+  
 function pageReady() {
   // ui.categoryUI();
 
   const btnArray = categoryLinks.querySelectorAll(".btn");
-  // const btnArray = Array.from(btn);
-
+  
   btnArray.forEach((btn) => {
     btn.addEventListener("click", function () {
       let newString;
@@ -51,20 +60,25 @@ function pageReady() {
         buttons.classList.remove('active');
         buttons.removeAttribute('disabled');
       }
-      
       this.classList.add('active');
       this.setAttribute('disabled', '');
-
+      
+      containerId = document.querySelector("#" + newCat);
+      //new
+      loadMoreBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        ui.loadMore(containerId, loadMoreBtn);
+      });
+      //new
       for (const card of cardContainer) {
         if (newCat !== card.getAttribute('id')) {
-          card.classList.add('hide');
+          card.classList.remove('fade-in');
           card.innerHTML = ""
         } else {
-          card.classList.remove('hide');
+          ui.loader(containerId, card);
+          ui.displayCategory(newString, containerId,loadMoreBtn);
         }
       }
-      containerId = document.querySelector("#" + newCat);
-      ui.displayCategory(newString, containerId);
       // console.log("first");
     });
   });

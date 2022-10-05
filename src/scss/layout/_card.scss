@@ -6,9 +6,7 @@
     max-width: 1400px;
     grid-template-columns: auto auto auto;
     gap: 26px;
-    &.hide {
-      display: none;
-    }
+
     @include u.breakpoint-down(large) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -37,6 +35,9 @@
       line-height: 28px;
       text-transform: uppercase;
       color: #383838;
+      &.hide {
+        display: none;
+      }
     }
   }
   &__item {
@@ -45,6 +46,10 @@
     background-color: var(--primary-text-color);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    &.hide {
+      display: none;
+    }
+
     cursor: pointer;
     img {
       width: 100%;

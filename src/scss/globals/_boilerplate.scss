@@ -1,4 +1,4 @@
-@use "../util" as u;
+@use '../util' as u;
 
 html {
   box-sizing: border-box;
@@ -32,4 +32,24 @@ img {
   width: 80%;
   max-width: u.rem(1200);
   margin: 0 auto;
+}
+
+.loader {
+  margin: 0 auto;
+}
+
+.fade-in {
+  animation: ease 1s fadeIn;
+  -webkit-animation: ease 1s fadeIn;
+  -moz-animation: ease 1s fadeIn;
+  -o-animation: ease 1s fadeIn;
+  -ms-animation: ease 1s fadeIn;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
