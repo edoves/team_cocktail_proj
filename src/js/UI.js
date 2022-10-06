@@ -1,12 +1,13 @@
 console.log(3, 'Third Load');
 
 class UI {
-  displayCategory(cat, containerId) {
+  displayCategory(cat, containerId, loadMoreBtn) {
     cockTailAPI.getCategories(cat).then(({ drinks }) => {
-      // this.loader(cardContainer);
-      drinks.map(function (item, index) {
+      drinks.slice(0,9).map(function (item, index) {
         //Append to the card__container class
-        containerId.innerHTML += `<div class="card__item" key=${index}>
+        setTimeout(() => {
+          containerId.innerHTML +=
+          `<div class="card__item" key=${index}>
             <div class="card_image">
               <img src="${item.strDrinkThumb}" alt="category">
             </div>
@@ -14,10 +15,46 @@ class UI {
               <p>${item.strDrink}</p>
             </div>
           </div>`;
+        }, 1500);
       });
-    });
+      drinks.slice(9).map(function (item, index) {
+        //Append to the card__container class
+        setTimeout(() => {
+          containerId.innerHTML +=
+          `<div class="card__item hide" key=${index}>
+            <div class="card_image">
+              <img src="${item.strDrinkThumb}" alt="category">
+            </div>
+            <div class="card__desc">
+              <p>${item.strDrink}</p>
+            </div>
+          </div>`;
+        }, 1500);
+      });
+      console.log(drinks)
+    });  
+    loadMoreBtn.classList.remove('hide');
   }
 
+  
+
+  //new
+  loadMore(containerId, loadMoreBtn) {
+    var collection;
+    collection = containerId.querySelectorAll('.hide');
+    if (collection.length > 0) {
+      var slicedCollection = Array.from(collection).slice(0, 3);
+      for (const sliceChild of slicedCollection) {
+        sliceChild.classList.remove('hide');
+      }
+    } else {
+      loadMoreBtn.classList.add('hide');
+    }
+    console.log(collection.length);
+  }
+  //new
+
+  
   displaySearch({ drinks }) {
     const cardsContainer = document.querySelector('.cards__container');
     this.loader(cardsContainer);
@@ -92,6 +129,32 @@ class UI {
     }, 2000);
   }
 
+  //emman code
+  // loader(cardContainerElement, card) {
+  //   const loaderContainer = cardContainerElement.parentElement;
+  //   const loaderImg = document.createElement("img");
+  //   loaderImg.classList = "loader";
+  //   loaderImg.src = "../src/images/loader.gif";
+  //   loaderContainer.insertBefore(loaderImg, loaderContainer.firstChild);
+  //   this.fadeOutEffect(loaderImg, card);
+  // }
+
+  // fadeOutEffect(img, card) {
+  //   var fadeEffect = setInterval(function () {
+  //       if (!img.style.opacity) {
+  //           img.style.opacity = 1;
+  //       }
+  //       if (img.style.opacity > 0) {
+  //           img.style.opacity -= 0.1;
+  //       } else {
+  //         img.remove();
+          
+  //         clearInterval(fadeEffect);
+  //       }
+  //   }, 150);
+  // }
+  //emman code
+  
   displayMessage(msg, className, el) {
     const msgEl = document.createElement('p');
     msgEl.classList = className;
@@ -104,3 +167,6 @@ class UI {
     }, 2000);
   }
 }
+
+
+  
