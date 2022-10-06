@@ -50,7 +50,6 @@ function eventListners() {
 
 function pageReady() {
   // ui.categoryUI();
-
   const btnArray = categoryLinks.querySelectorAll('.btn');
   // const btnArray = Array.from(btn);
 

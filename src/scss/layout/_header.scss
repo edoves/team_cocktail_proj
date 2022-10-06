@@ -1,49 +1,47 @@
-@use "../util" as u;
+@use '../util' as u;
 
 .header {
   &__container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2rem;
 
-    @include u.breakpoint-down(small) {
-      margin: u.rem(20) 0;
-      line-height: u.rem(1);
-      flex-direction: column;
+    @media only screen and (min-width: 34.0625em) {
+      justify-content: space-between;
+      padding-bottom: 0;
     }
   }
 
   &__logo {
-    font-weight: 700;
-    font-style: bold;
-
+    font-size: 1.4rem;
     a {
       color: var(--secondary-text-color);
+    }
+
+    h2 {
+      @media only screen and (max-width: 34.0625em) {
+        margin-bottom: 0;
+      }
     }
   }
 
   &__social {
     display: flex;
-    align-items: center;
-    list-style: none;
-    gap: u.rem(10);
-    cursor: pointer;
+    justify-content: space-between;
+    width: u.rem(250);
 
-    @include u.breakpoint-down(medium) {
-      gap: u.rem(10);
-      margin: 0 auto;
-    }
-
-     .fa-brands {
+    .fa-brands {
+      font-size: u.rem(20);
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      width: u.rem(30);
-      height: u.rem(30);
+      width: u.rem(40);
+      height: u.rem(40);
       background-color: var(--primary-background-color);
       color: var(--primary-text-color);
-      padding: u.rem(10);
 
       &:hover {
         background-color: var(--secondary-background-color);
@@ -53,6 +51,7 @@
   }
 
   &__nav {
+    position: relative;
     padding: u.rem(20) 0;
     background-color: var(--teriary-background-color);
 
@@ -80,7 +79,7 @@
         background: var(--teriary-background-color);
         height: u.rem(200);
 
-        @include u.breakpoint-down(xsmall){
+        @include u.breakpoint-down(xsmall) {
           height: u.rem(210);
         }
       }
@@ -98,7 +97,6 @@
     list-style: none;
     padding: 0;
     gap: u.rem(20);
-    
 
     @include u.breakpoint-down(small) {
       flex-direction: column;
@@ -114,7 +112,7 @@
 
     a {
       color: var(--primary-text-color);
-      
+
       &:hover {
         color: var(--tertiary-text-color);
       }
@@ -127,10 +125,9 @@
 
       &:last-child {
         border-bottom: none;
-        padding-bottom: u.rem(17)
+        padding-bottom: u.rem(17);
       }
     }
-
   }
 
   //burger menu
@@ -141,13 +138,12 @@
       z-index: 2;
       right: 0;
       padding: u.rem(24);
-      top: u.rem(112);
+      top: 0;
       //top: u.rem(14);
       // height: u.rem(10);
       // top: u.rem(30);
       //bottom: 0;
       //width: u.rem(3);
-      
     }
 
     #burger-menu span,
@@ -163,7 +159,7 @@
 
     #burger-menu span:before,
     #burger-menu span:after {
-      content: "";
+      content: '';
     }
 
     #burger-menu span {
