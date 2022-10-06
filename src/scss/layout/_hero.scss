@@ -1,7 +1,7 @@
-@use "../util" as u;
+@use '../util' as u;
 
 .hero {
-  background-image: url("/src/images/hero.jpg");
+  background-image: url('/src/images/hero.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -19,10 +19,7 @@
     padding-top: u.rem(80);
     line-height: u.rem(80);
     text-transform: uppercase;
-
-    @include u.breakpoint-down(large) {
-      font-size: u.rem(41);
-    }
+    font-size: u.rem(41);
 
     @include u.breakpoint-down(medium) {
       font-size: u.rem(35);
