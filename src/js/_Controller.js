@@ -47,7 +47,12 @@ function eventListners() {
     search.addEventListener('submit', searchCocktails);
   }
 }
-
+  // const btnArray = Array.from(btn);
+  
+  
+  //load More Button
+  let loadMoreBtn = document.querySelector(".loadMoreBtn");
+  
 function pageReady() {
   // ui.categoryUI();
 
@@ -71,20 +76,26 @@ function pageReady() {
         buttons.classList.remove('active');
         buttons.removeAttribute('disabled');
       }
-
       this.classList.add('active');
       this.setAttribute('disabled', '');
-
+      
+      containerId = document.querySelector("#" + newCat);
+      //new
+      loadMoreBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        ui.loadMore(containerId, loadMoreBtn);
+      });
+      //new
       for (const card of cardContainer) {
         if (newCat !== card.getAttribute('id')) {
-          card.classList.add('hide');
-          card.innerHTML = '';
+          card.classList.remove('fade-in');
+          card.innerHTML = ""
         } else {
-          card.classList.remove('hide');
+          ui.loader(containerId);
+          card.classList.add('fade-in');
+          ui.displayCategory(newString, containerId,loadMoreBtn);
         }
       }
-      containerId = document.querySelector('#' + newCat);
-      ui.displayCategory(newString, containerId);
       // console.log("first");
     });
   });
